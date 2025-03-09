@@ -1,0 +1,57 @@
+---
+import Layout from "../layouts/Layout.astro";
+import SocialPill from "../components/SocialPill.astro";
+import ContactIcon from "../icons/Contact.astro";
+import Experience from "../components/Experience.astro";
+import ExperienceIcon from "../icons/Briefcase.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import CodeIcon from "../icons/Code.astro";
+import Projects from "../components/Projects.astro";
+---
+
+<Layout
+	title="Portfoli Ismael Benítez - Desenvolupador i Programador Web"
+	description="Contracta a un perfil junior amb ambició i motivació per crear la teva aplicació web"
+>
+	<main class="px-4">
+		<SectionContainer id="top" class="py-44 pb-32">
+			<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">
+				<img
+					class="rounded-full w-16 h-16"
+					src="https://i.gyazo.com/3ff46d48b1eed99230ad751a1771bbbb.png"
+					alt="ismadev photo"
+				/>	
+				Ei, sóc Ismael Benítez
+			</h1>
+			</div>
+			<h2 class="text-xl lg:text-2xl opacity-80 text-wrap max-w-[700px]">
+				Estudiant del Grau Superior de Desenvolupament Web de l'Institut
+				Nicolau Copèrnic a Terrasa, Espanya.
+			</h2>
+
+			<nav class="flex gap-4 mt-8 flex-wrap">
+				<SocialPill href="mailto:ismaelbenitezmartinez@gmail.com">
+					<ContactIcon class="size-4 md:size-6" />
+					ismaelbenitezmartinez@gmail.com
+				</SocialPill>
+			</nav>
+		</SectionContainer>
+
+		<SectionContainer id="projectes">
+			<h2 class="text-white text-3xl font-semibold mb-6 flex gap-x-3 items-center"> 
+				<CodeIcon class="size-8" />
+				Projectes
+			</h2>
+			<Projects />
+		</SectionContainer>
+
+		<SectionContainer id="experiencia">
+			<h2 class="text-white text-3xl font-semibold mb-6 flex gap-x-3 items-center"> 
+				<ExperienceIcon class="size-8" />
+				Experiència laboral
+			</h2>
+			<Experience>
+			</Experience>
+		</SectionContainer>
+	</main>
+</Layout>

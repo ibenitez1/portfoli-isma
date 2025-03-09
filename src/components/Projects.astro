@@ -1,0 +1,90 @@
+---
+import HTMLIcon from "../icons/HTML.astro";
+import FigmaIcon from "../icons/Figma.astro";
+import SCSSIcon from "../icons/SCSS.astro";
+import LaravelIcon from "../icons/Laravel.astro";
+import VueIcon from "../icons/Vue.astro";
+import JavaScriptIcon from "../icons/JavaScript.astro";
+import PHPIcon from "../icons/PHP.astro";
+
+const TAGS = {
+    HTML: {
+        name: "HTML",
+        class: "bg-orange-500/10 border border-orange-500 text-orange-500",
+        icon: HTMLIcon,
+    },
+    Figma: {
+        name: "Figma",
+        class: "bg-purple-500/10 border border-purple-500 text-purple-500",
+        icon: FigmaIcon,
+    },
+    SCSS: {
+        name: "SCSS",
+        class: "bg-pink-500/10 border border-pink-500 text-pink-500",
+        icon: SCSSIcon,
+    },
+    Laravel: {
+        name: "Laravel",
+        class: "bg-red-600/10 border border-red-600 text-red-600",
+        icon: LaravelIcon,
+    },
+    Vue: {
+        name: "Vue",
+        class: "bg-green-500/10 border border-green-500 text-green-500",
+        icon: VueIcon,
+    },
+    JavaScript: {
+        name: "JavaScript",
+        class: "bg-yellow-400/10 border border-yellow-400 text-yellow-400",
+        icon: JavaScriptIcon,
+    },
+    PHP: {
+        name: "PHP",
+        class: "bg-indigo-600/10 border border-indigo-600 text-indigo-600",
+        icon: PHPIcon,
+    },
+}
+
+const PROJECTS = [
+    {
+        title: "Rooming",
+        description:
+            "Projecte d'un gestor d'hotels backoffice amb Laravel i webs d'hotels dissenyades amb mobile-first amb Vue. El gestor proporciona einas per gestionar cada hotel amb un calendari de reserves i en la part web es poden crear reserves en les dates disponibles",
+        link: "https://gitlab.com/ibenitez1/grup03-hotels",
+        image: "/projects/rooming.webp",
+        tags: [
+            TAGS.HTML,
+            TAGS.Figma,
+            TAGS.SCSS,
+            TAGS.Laravel,
+            TAGS.Vue,
+            TAGS.JavaScript,
+            TAGS.PHP,
+        ],
+    },
+];
+---
+
+{
+    PROJECTS.map(({ title, description, tags, image }) => (
+        <article>
+            <h3 class="text-2xl font-semibold text-white mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>
+            <ul class="flex gap-x-2 flex-row">
+                {tags.map((tag) => (
+                    <li>
+                        <span class={`flex items-center gap-x-2 px-2 py-1 rounded-full text-xs font-medium ${tag.class}`}>
+                            {tag.icon && <tag.icon class="w-5 h-5" />}
+                            {tag.name}
+                        </span>
+                    </li>
+                ))}
+            </ul>
+            <img
+                class="rounded-xl border-1 border-neutral-300 lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50"
+                src={image}
+                alt={`Captura de pantalla del projecte ${title}`}
+            />
+        </article>
+    ))
+}

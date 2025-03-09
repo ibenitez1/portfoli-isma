@@ -1,0 +1,52 @@
+---
+import '@fontsource-variable/onest';
+import Header from '../components/Header.astro'
+import '../styles/global.css';
+
+interface Props {
+	title: string,
+	description: string
+}
+
+const { description, title } = Astro.props
+---
+<!doctype html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content={description} />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Portfolio Isma</title>
+		<title>{title}</title>
+	</head>
+	<body class="relative text-white">
+		<div class="absolute top-0 bottom-0 z-[-2] min-h-screen w-full bg-gray-950
+      	bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]"></div>
+		<Header />
+		<slot />
+	</body>
+</html>
+
+<style is:global>
+	:root {
+		color-scheme: light dark;
+	}
+
+	html {
+		font-family: 'Onest variable', sans-serif;
+		scroll-behavior: smooth;
+	}
+
+	body {
+		display: flex;
+		flex-direction: column;
+		min-height: 100vh;
+	}
+
+	@media (prefers-reduced-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
+	}
+</style>

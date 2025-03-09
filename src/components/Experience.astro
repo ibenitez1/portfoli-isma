@@ -1,0 +1,22 @@
+
+---
+import ExperienceItem from "./ExperienceItem.astro"
+
+const EXPERIENCE = [
+    {
+        date: 'Septembre 2022 - Juliol 2024',
+        title: 'Reponedor en Mercadona',
+        description: 'Treball cara al públic on és necessari el treball en equip, una bona organització i gestió del temps, i comunicació entre els companys.',
+    }
+]
+---
+<ol class="relative border-s border-gray-200 ml-3">  
+    {
+        EXPERIENCE.map(experience => (
+        <li class="mb-10 ms-4">
+            <ExperienceItem {... experience} />
+        </li>
+        ))
+    }
+</ol>
+
