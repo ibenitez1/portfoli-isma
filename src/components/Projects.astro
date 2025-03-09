@@ -6,6 +6,7 @@ import LaravelIcon from "../icons/Laravel.astro";
 import VueIcon from "../icons/Vue.astro";
 import JavaScriptIcon from "../icons/JavaScript.astro";
 import PHPIcon from "../icons/PHP.astro";
+import CSSIcon from "../icons/CSS.astro";
 
 const TAGS = {
     HTML: {
@@ -43,6 +44,11 @@ const TAGS = {
         class: "bg-indigo-600/10 border border-indigo-600 text-indigo-600",
         icon: PHPIcon,
     },
+    CSS: {
+        name: "CSS",
+        class: "bg-blue-500/10 border border-blue-500 text-blue-500",
+        icon: CSSIcon, 
+    }
 }
 
 const PROJECTS = [
@@ -62,6 +68,19 @@ const PROJECTS = [
             TAGS.PHP,
         ],
     },
+    {
+        title: "Subasterra - Casa de subhastes",
+        description:
+            "Projecte d'una casa de shubastes que ofereix una plataforma en línia per gestionar subhastes físiques en petit format. Facilita la interacció entre compradors i venedors.",
+        link: "https://gitlab.com/ortiz.leal.roger/subasterra/",
+        image: "/projects/subasterra.webp",
+        tags: [
+            TAGS.HTML,
+            TAGS.CSS,
+            TAGS.JavaScript,
+            TAGS.PHP
+        ]
+    }
 ];
 ---
 
