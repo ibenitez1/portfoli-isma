@@ -47,7 +47,7 @@ const TAGS = {
 
 const PROJECTS = [
     {
-        title: "Rooming",
+        title: "Rooming - Gestor d'hotels",
         description:
             "Projecte d'un gestor d'hotels backoffice amb Laravel i webs d'hotels dissenyades amb mobile-first amb Vue. El gestor proporciona einas per gestionar cada hotel amb un calendari de reserves i en la part web es poden crear reserves en les dates disponibles",
         link: "https://gitlab.com/ibenitez1/grup03-hotels",
@@ -66,25 +66,42 @@ const PROJECTS = [
 ---
 
 {
-    PROJECTS.map(({ title, description, tags, image }) => (
-        <article>
-            <h3 class="text-2xl font-semibold text-white mb-2">{title}</h3>
-            <p class="text-lg mb-4 text-pretty">{description}</p>
-            <ul class="flex gap-x-2 flex-row">
-                {tags.map((tag) => (
-                    <li>
-                        <span class={`flex items-center gap-x-2 px-2 py-1 rounded-full text-xs font-medium ${tag.class}`}>
-                            {tag.icon && <tag.icon class="w-5 h-5" />}
-                            {tag.name}
-                        </span>
-                    </li>
-                ))}
-            </ul>
-            <img
-                class="rounded-xl border-1 border-neutral-300 lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50"
-                src={image}
-                alt={`Captura de pantalla del projecte ${title}`}
-            />
+    PROJECTS.map(({ title, description, tags, image, link }) => (
+        <article class="flex flex-col md:flex-row gap-8 items-start mb-12">
+            {/* Imagen a la izquierda */}
+            <a 
+                href={link} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="w-full md:w-1/2 hover:scale-[1.02] transition-transform"
+            >
+                <img
+                    class="rounded-xl border-1 border-neutral-300 lg:border lg:border-gray-800 lg:hover:border-gray-700 object-cover w-full h-full"
+                    src={image}
+                    alt={`Captura de pantalla del proyecto ${title}`}
+                />
+            </a>
+
+            {/* Contenido a la derecha */}
+            <div class="w-full md:w-1/2 flex flex-col">
+                {/* Título */}
+                <h3 class="text-2xl font-semibold text-white mb-4">{title}</h3>
+                
+                {/* Tags */}
+                <ul class="flex flex-wrap gap-2 mb-4">
+                    {tags.map((tag) => (
+                        <li>
+                            <span class={`flex items-center gap-x-2 px-2 py-1 rounded-full text-xs font-medium ${tag.class}`}>
+                                {tag.icon && <tag.icon class="w-5 h-5" />}
+                                {tag.name}
+                            </span>
+                        </li>
+                    ))}
+                </ul>
+
+                {/* Descripción */}
+                <p class="text-lg text-pretty text-gray-300">{description}</p>
+            </div>
         </article>
     ))
 }
