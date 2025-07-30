@@ -44,15 +44,7 @@ import AboutMe from "../components/AboutMe.astro"
 			</nav>
 		</SectionContainer>
 
-		<SectionContainer id="sobre-mi" class="py-22">
-			<h2 class="text-white text-3xl font-semibold mb-6 flex gap-x-3 items-center"> 
-				<UserIcon class="size-8" />
-				Sobre mi
-			</h2>
-			<AboutMe />
-		</SectionContainer>
-
-		<SectionContainer id="projectes" class="py-22">
+		<SectionContainer id="projectes" class="py-12">
 			<h2 class="text-white text-3xl font-semibold mb-6 flex gap-x-3 items-center"> 
 				<CodeIcon class="size-8" />
 				Projectes
@@ -60,13 +52,21 @@ import AboutMe from "../components/AboutMe.astro"
 			<Projects />
 		</SectionContainer>
 
-		<SectionContainer id="experiencia" class="py-22">
+		<SectionContainer id="experiencia" class="py-12">
 			<h2 class="text-white text-3xl font-semibold mb-6 flex gap-x-3 items-center"> 
 				<ExperienceIcon class="size-8" />
 				Experiència laboral
 			</h2>
 			<Experience>
 			</Experience>
+		</SectionContainer>
+
+		<SectionContainer id="sobre-mi" class="py-12">
+			<h2 class="text-white text-3xl font-semibold mb-6 flex gap-x-3 items-center"> 
+				<UserIcon class="size-8" />
+				Sobre mi
+			</h2>
+			<AboutMe />
 		</SectionContainer>
 	</main>
 </Layout>
