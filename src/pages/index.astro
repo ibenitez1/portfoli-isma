@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import SocialPill from "../components/SocialPill.astro";
 import ContactIcon from "../icons/Contact.astro";
+import LinkedInIcon from "../icons/LinkedIn.astro";
 import Experience from "../components/Experience.astro";
 import ExperienceIcon from "../icons/Briefcase.astro";
 import SectionContainer from "../components/SectionContainer.astro";
@@ -26,15 +27,19 @@ import AboutMe from "../components/AboutMe.astro"
 				Ei, sóc Ismael Benítez
 			</h1>
 			</div>
-			<h2 class="text-xl lg:text-2xl opacity-80 text-wrap max-w-[700px]">
-				Estudiant del Grau Superior de Desenvolupament Web de l'Institut
-				Nicolau Copèrnic a Terrasa, Espanya.
+			<h2 class="text-xl lg:text-2xl text-[#D1D2D6] text-wrap max-w-[700px]">
+				Tècnic titulat del <b class="text-white opacity-95">Grau Superior de Desenvolupament Web</b> de l'<b class="text-white opacity-95">Institut
+				Nicolau Copèrnic</b> a Terrasa, Espanya.
 			</h2>
 
 			<nav class="flex gap-4 mt-8 flex-wrap">
 				<SocialPill href="mailto:ismaelbenitezmartinez@gmail.com">
 					<ContactIcon class="size-4 md:size-6" />
 					ismaelbenitezmartinez@gmail.com
+				</SocialPill>
+				<SocialPill href="https://www.linkedin.com/in/ismael-benitez-martinez/">
+					<LinkedInIcon class="size-4 md:size-6" />
+					LinkedIn
 				</SocialPill>
 			</nav>
 		</SectionContainer>

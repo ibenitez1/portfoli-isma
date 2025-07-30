@@ -7,6 +7,8 @@ import VueIcon from "../icons/Vue.astro";
 import JavaScriptIcon from "../icons/JavaScript.astro";
 import PHPIcon from "../icons/PHP.astro";
 import CSSIcon from "../icons/CSS.astro";
+import MySQLIcon from "../icons/MySQL.astro";
+import GitLabIcon from "../icons/GitLab.astro";
 
 const TAGS = {
     HTML: {
@@ -48,10 +50,32 @@ const TAGS = {
         name: "CSS",
         class: "bg-blue-500/10 border border-blue-500 text-blue-500",
         icon: CSSIcon, 
+    },
+    MySQL: {
+        name: "MySQL",
+        class: "bg-cyan-600/10 border border-cyan-600 text-cyan-600",
+        icon: MySQLIcon,
     }
 }
 
 const PROJECTS = [
+    {
+        title: "Club Stas Tarat",
+        description:
+            "Projecte d'una web per una associació cultural que ofereix un sistema complet per gestionar la ludoteca, reserves de jocs i sales, i el registre de clients, amb una interfície accessible per a totes les edats.",
+        link: "https://gitlab.com/copernic-projects/stastarat",
+        image: "/projects/stastarat.webp",
+        tags: [
+            TAGS.HTML,
+            TAGS.Figma,
+            TAGS.SCSS,
+            TAGS.Laravel,
+            TAGS.Vue,
+            TAGS.JavaScript,
+            TAGS.PHP,
+            TAGS.MySQL,
+        ],
+    },
     {
         title: "Rooming - Gestor d'hotels",
         description:
@@ -66,6 +90,7 @@ const PROJECTS = [
             TAGS.Vue,
             TAGS.JavaScript,
             TAGS.PHP,
+            TAGS.MySQL,
         ],
     },
     {
@@ -78,7 +103,8 @@ const PROJECTS = [
             TAGS.HTML,
             TAGS.CSS,
             TAGS.JavaScript,
-            TAGS.PHP
+            TAGS.PHP,
+            TAGS.MySQL,
         ]
     }
 ];
@@ -102,7 +128,7 @@ const PROJECTS = [
             </a>
 
             {/* Contenido a la derecha */}
-            <div class="w-full md:w-1/2 flex flex-col">
+            <div class="w-full md:w-1/2 flex flex-col gap-2">
                 {/* Título */}
                 <h3 class="text-2xl font-semibold text-white mb-4">{title}</h3>
                 
@@ -120,6 +146,38 @@ const PROJECTS = [
 
                 {/* Descripción */}
                 <p class="text-lg text-pretty text-gray-300">{description}</p>
+
+                <div class="mt-auto flex justify-end">
+                    <a
+                        href={link}
+                        class="
+                        inline-flex items-center justify-center
+                        gap-2
+                        rounded-full
+                        bg-gradient-to-r from-white/10 to-white/5
+                        backdrop-blur-sm
+                        py-2 px-4
+                        md:py-3 md:px-6
+                        text-sm md:text-base
+                        font-medium
+                        text-white
+                        shadow-sm
+                        transition
+                        duration-200
+                        ease-out
+                        hover:shadow-md hover:scale-105
+                        focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-white/50
+                        active:scale-100 active:opacity-90
+                        w-auto
+                        "
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label={`Més informació sobre ${title}`}
+                    >
+                        <GitLabIcon class="w-5 h-5 md:w-6 md:h-6" />
+                        <span>Més informació</span>
+                    </a>
+                </div>
             </div>
         </article>
     ))
